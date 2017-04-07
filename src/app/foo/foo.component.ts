@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Ping } from "app/generator/generator.component";
 
 @Component({
   selector: 'app-foo',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooComponent implements OnInit {
 
+  pings: Ping[] = [];
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  onPing(ping: Ping): void {
+    this.pings.push(ping);
+    console.log('received ping');
+  }
 }

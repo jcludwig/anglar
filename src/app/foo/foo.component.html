@@ -1,3 +1,8 @@
-<p>
-  foo works!
-</p>
+
+  <app-generator (ping)="onPing($event)"></app-generator>
+
+  <ul>
+    <li *ngFor="let ping of pings">{{ping.x}}</li>
+  </ul>
+
+  <app-visual></app-visual>

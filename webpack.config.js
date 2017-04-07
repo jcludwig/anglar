@@ -242,6 +242,13 @@ module.exports = {
         "main"
       ]
     }),
+    new CommonsChunkPlugin({
+      "name": "powerbi",
+      "minChunks": (module) => module.resource && module.resource.startsWith(nodeModules),
+      "chunks": [
+        "main"
+      ]
+    }),
     new ExtractTextPlugin({
       "filename": "[name].bundle.css",
       "disable": true

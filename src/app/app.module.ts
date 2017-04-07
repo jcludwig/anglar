@@ -7,12 +7,16 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BedazzleDirective } from './bedazzle.directive';
 import { FooComponent } from './foo/foo.component';
+import { VisualComponent } from './visual/visual.component';
+import { GeneratorComponent } from './generator/generator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BedazzleDirective,
-    FooComponent
+    FooComponent,
+    VisualComponent,
+    GeneratorComponent
   ],
   imports: [
     BrowserModule,
