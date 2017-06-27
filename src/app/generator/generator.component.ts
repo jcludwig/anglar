@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
+import { Observable } from 'rxjs';
+
 @Component({
   selector: 'app-generator',
   templateUrl: './generator.component.html',
@@ -13,12 +15,8 @@ export class GeneratorComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    let raisePing = () => {
-      this.ping.emit({ payload: Math.random() });
-      setTimeout(raisePing, 1000);
-    };
-
-    setTimeout(raisePing, 1000);
+    let timer = Observable.interval(1000)
+      .subscribe((i) => { console.log(i); this.ping.emit({ payload: i }); });
   }
 }
 

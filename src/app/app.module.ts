@@ -9,6 +9,7 @@ import { BedazzleDirective } from './bedazzle.directive';
 import { FooComponent } from './foo/foo.component';
 import { VisualComponent } from './visual/visual.component';
 import { GeneratorComponent } from './generator/generator.component';
+import { DatagenService } from "app/datagen.service";
 
 @NgModule({
   declarations: [
@@ -20,15 +21,15 @@ import { GeneratorComponent } from './generator/generator.component';
   ],
   imports: [
     BrowserModule,
-        RouterModule.forRoot([{
-      path: 'foo',
+    RouterModule.forRoot([{
+      path: '',
       component: FooComponent,
     }, {
       path: 'lazy',
       loadChildren: 'app/my-lazy-module/my-lazy-module.module#MyLazyModuleModule'
     }])
   ],
-  providers: [],
+  providers: [ DatagenService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

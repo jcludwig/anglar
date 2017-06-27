@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Ping } from "app/generator/generator.component";
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-foo',
